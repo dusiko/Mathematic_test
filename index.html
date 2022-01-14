@@ -2,120 +2,134 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      body{
-        font-family: monospace;
-      }
-      #btn{
-        margin-top: 15px;
-      }
-      #res{
-        display: none;
-        text-align: center;
-      }
-      table tr:last-child{
-        text-align: left;
-      }
-      #totalRightAnswers{
-        font-weight: bold;
-      }
-      table{
-        margin: 0 auto;
-      }
-      tr td:first-child{
-        padding: 0 5px;
-      }
-    </style>
-    <title>Mathematic test</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: monospace;
+		}
+
+		#btn {
+			margin-top: 15px;
+		}
+
+		#res {
+			display: none;
+			text-align: center;
+		}
+
+		table tr:last-child {
+			text-align: left;
+		}
+
+		#totalRightAnswers {
+			font-weight: bold;
+		}
+
+		table {
+			margin: 0 auto;
+		}
+
+		tr td:first-child {
+			padding: 0 5px;
+		}
+
+		fieldset {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			max-width: 320px;
+			margin: 0 auto;
+		}
+	</style>
+	<title>Mathematic test</title>
 </head>
 
 <body>
 
-<form>
-  <fieldset>
-  <legend>Checker</legend>
-  <label for="firstNum">first number: </label>
-  <input type="number" name="firstNum" disabled value="5">
-  <p>Operation: <span id="operation">+</span></p>
-  <label for="secondNum">second number: </label>
-  <input type="number" name="secondNum" disabled value="10">
-  <hr>
-  <label for="answer">Your answer: </label>
-  <input type="number" name="answer">
-  <button type="button" onclick="check()" id="btn">check</button>
-  <p>Result: <span id="result">_______</span></p>
-  <p>Tasks count: <span id="tasksCount">0</span>/10</p>
-  </fieldset>
-  
-  <fieldset id="res">
-    <h3>Your statistics</h3>
-    <table border="1px">
-      <tr>
-        <th>task</th>
-        <th>right answer</th>
-        <th>your answer</th>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr class="rows">
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td colspan="3">Total right answers: <span id="totalRightAnswers"></span></td>
-      </tr>
-    </table>
-    <p id="verdict"></p>
-  </fieldset>
-</form>
+	<form>
+		<fieldset>
+			<legend>Checker</legend>
+			<label for="firstNum">first number: </label>
+			<input type="number" name="firstNum" disabled value="5">
+			<p>Operation: <span id="operation">+</span></p>
+			<label for="secondNum">second number: </label>
+			<input type="number" name="secondNum" disabled value="10">
+			<hr>
+			<label for="answer">Your answer: </label>
+			<input type="number" name="answer">
+			<button type="button" onclick="check()" id="btn">check</button>
+			<p>Result: <span id="result">_______</span></p>
+			<p>Tasks count: <span id="tasksCount">0</span>/10</p>
+		</fieldset>
 
-<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+		<fieldset id="res">
+			<h3>Your statistics</h3>
+			<table border="1px">
+				<tr>
+					<th>task</th>
+					<th>right answer</th>
+					<th>your answer</th>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="rows">
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="3">Total right answers: <span id="totalRightAnswers"></span></td>
+				</tr>
+			</table>
+			<p id="verdict"></p>
+		</fieldset>
+	</form>
+
+	<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 
