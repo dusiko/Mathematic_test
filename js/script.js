@@ -1,5 +1,5 @@
-function getRandNum(max){
-  return 0 + Math.floor(Math.random() * (max+1))
+function getRandNum(min,max){
+  return min + Math.floor(Math.random() * (max-min+1))
 }
 
 function verdict(val){
@@ -14,11 +14,12 @@ let history = {
 }
 
 function random(){
-  document.getElementsByName('firstNum')[0].value = getRandNum(100)
-  document.getElementsByName('secondNum')[0].value = getRandNum(100)
-  
+  document.getElementsByName('firstNum')[0].value = getRandNum(0,100)
+  document.getElementsByName('secondNum')[0].value = getRandNum(0,100)
   const operations = ['+','-','*','/']
-  document.getElementById('operation').innerHTML = operations[getRandNum(3)]
+  document.getElementById('operation').innerHTML = operations[getRandNum(0,3)]
+  if (document.getElementById('operation').innerHTML == '/')
+    document.getElementsByName('secondNum')[0].value = getRandNum(1,100)
   
   document.getElementsByName('answer')[0].value = ''
   
@@ -30,9 +31,7 @@ function random(){
   
   document.getElementById('btn').setAttribute('onclick','check()')
   document.getElementById('btn').innerText = 'check'
-  
-  
-}
+} 
 
 function check(){
   const fNum = +document.getElementsByName('firstNum')[0].value
@@ -51,8 +50,11 @@ function check(){
     result = fNum / sNum
   history.rightAnswer.push(+result.toFixed(2))
   
-  const answer = +document.getElementsByName('answer')[0].value || 'no answer'
+  let answer = document.getElementsByName('answer')[0].value
+  if (answer == '')
+    answer = 'no answer'
   history.userAnswer.push(answer)
+  answer = parseFloat(answer)
   
   const resultDiv = document.getElementById('result')
   if (answer != 'no answer' && answer.toFixed(2) == result.toFixed(2)){
@@ -89,5 +91,3 @@ function check(){
     document.getElementById('res').style.display='block'
   }
 }
-
-random()
